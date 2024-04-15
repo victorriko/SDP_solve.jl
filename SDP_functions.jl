@@ -79,7 +79,7 @@ end
 #########################################################################################################################
 function creating_and_solving_model(DIFFERENT_VAR, NB_BLOCKS, DIFFERENT_BLOCKS, block_var,CLIQUE_TREE, CONSTRAINTS, MATRICES, constants_per_constraint,my_solver, objscale)
   #initialize
-  m = Model(with_optimizer(my_solver))
+  m = Model(my_solver)
   NB_CONSTRAINTS = size(CONSTRAINTS,1)
   jumpX = Array{LinearAlgebra.Symmetric{VariableRef,Array{VariableRef,2}}}(undef,NB_BLOCKS)
   coeff_block = Dict{Tuple{String,String}, Set{String}}()
